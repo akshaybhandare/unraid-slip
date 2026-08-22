@@ -1,0 +1,74 @@
+<Container version="2">
+  <Name>Slip</Name>
+  <Repository>ghcr.io/akshaybhandare/slip:latest</Repository>
+  <Registry>https://github.com/akshaybhandare/slip/pkgs/container/slip</Registry>
+  <Network>bridge</Network>
+  <Privileged>false</Privileged>
+  <Shell>sh</Shell>
+  <Icon>https://raw.githubusercontent.com/akshaybhandare/unraid-slip/main/icon.svg</Icon>
+  <WebUI>http://[IP]:[PORT:3000]</WebUI>
+  <Overview>
+    Slip is a lightning-fast, self-hosted visual bookmark archive and reading space. Inspired by mymind. Built with modern Node.js/TypeScript, React, and SQLite (WAL mode + FTS5 full-text indexing), it features a clean visual stream grid, distraction-free reader mode, robust tag search, and optional Bring Your Own AI (BYO-AI) integrations.
+  </Overview>
+  <Project>https://github.com/akshaybhandare/slip</Project>
+  <Support>https://github.com/akshaybhandare/slip/issues</Support>
+  <Category>Productivity: Tools:Utilities Network:Web</Category>
+  <ExtraSearchTerms>slip bookmark archive read later mymind visual organizer</ExtraSearchTerms>
+  <TemplateURL>https://raw.githubusercontent.com/akshaybhandare/unraid-slip/main/templates/slip.xml</TemplateURL>
+  <Date>2026-08-22</Date>
+  <Changes>
+    [Initial Release] - Official Unraid template.
+  </Changes>
+  <Config
+    Name="WebUI Port"
+    Target="3000"
+    Default="3000"
+    Mode="tcp"
+    Description="Port used by the Slip web interface."
+    Type="Port"
+    Display="always"
+    Required="true"
+    Mask="false">
+  </Config>
+  <Config
+    Name="AppData Path"
+    Target="/config"
+    Default="/mnt/user/appdata/slip"
+    Mode="rw"
+    Description="Persistent directory for storing Slip's SQLite database (bookmarks.db) and thumbnail cache."
+    Type="Path"
+    Display="always"
+    Required="true"
+    Mask="false">
+  </Config>
+  <Config
+    Name="PUID"
+    Target="PUID"
+    Default="99"
+    Description="User ID to run the container (default 99 for Unraid nobody user)."
+    Type="Variable"
+    Display="advanced"
+    Required="false"
+    Mask="false">
+  </Config>
+  <Config
+    Name="PGID"
+    Target="PGID"
+    Default="100"
+    Description="Group ID to run the container (default 100 for Unraid users group)."
+    Type="Variable"
+    Display="advanced"
+    Required="false"
+    Mask="false">
+  </Config>
+  <Config
+    Name="COOKIE_SECURE"
+    Target="COOKIE_SECURE"
+    Default="false"
+    Description="Set to true if hosting behind an HTTPS reverse proxy."
+    Type="Variable"
+    Display="advanced"
+    Required="false"
+    Mask="false">
+  </Config>
+</Container>
