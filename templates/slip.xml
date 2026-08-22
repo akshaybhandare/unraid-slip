@@ -5,7 +5,7 @@
   <Network>bridge</Network>
   <Privileged>false</Privileged>
   <Shell>sh</Shell>
-  <Icon>https://raw.githubusercontent.com/akshaybhandare/unraid-slip/main/icon.svg</Icon>
+  <Icon>https://raw.githubusercontent.com/akshaybhandare/unraid-slip/main/icon.png</Icon>
   <WebUI>http://[IP]:[PORT:3000]</WebUI>
   <Overview>
     Slip is a lightning-fast, self-hosted visual bookmark archive and reading space. Inspired by mymind. Built with modern Node.js/TypeScript, React, and SQLite (WAL mode + FTS5 full-text indexing), it features a clean visual stream grid, distraction-free reader mode, robust tag search, and optional Bring Your Own AI (BYO-AI) integrations.
