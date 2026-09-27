@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Name>PoopiePay</Name>
+  <Repository>ghcr.io/akshaybhandare/poopiepay:latest</Repository>
+  <Registry>https://github.com/akshaybhandare/poopiepay/pkgs/container/poopiepay</Registry>
+  <Network>bridge</Network>
+  <Privileged>false</Privileged>
+  <Shell>sh</Shell>
+  <Icon>https://raw.githubusercontent.com/akshaybhandare/unraid-slip/main/poopiepay-icon.png</Icon>
+  <WebUI>http://[IP]:[PORT:8080]</WebUI>
+  <Overview>
+    PoopiePay is a fast, ultra-minimalist, Bauhaus-styled UPI QR Code Generator with a persistent file data saver. Designed to run as a single static binary (~12MB Docker image) with zero heavy dependencies. Easily generate real-time UPI QR codes for GPay, PhonePe, Paytm, BHIM, Cred, and Navi payments. Automatically pre-populates payee UPI ID and transaction notes from persistent disk storage.
+  </Overview>
+  <Project>https://github.com/akshaybhandare/poopiepay</Project>
+  <Support>https://github.com/akshaybhandare/poopiepay/issues</Support>
+  <Category>Tools:Utilities Productivity: Financial: Network:Web</Category>
+  <ExtraSearchTerms>poopiepay upi qr code generator payment gpay phonepe paytm bhim minimalist bauhaus</ExtraSearchTerms>
+  <TemplateURL>https://raw.githubusercontent.com/akshaybhandare/unraid-slip/main/templates/poopiepay.xml</TemplateURL>
+  <Date>2026-09-27</Date>
+  <Changes>
+    [Initial Release] - Official Unraid template for PoopiePay.
+  </Changes>
+  <Config
+    Name="WebUI Port"
+    Target="8080"
+    Default="8080"
+    Mode="tcp"
+    Description="Port used by the PoopiePay web interface."
+    Type="Port"
+    Display="always"
+    Required="true"
+    Mask="false">
+  </Config>
+  <Config
+    Name="AppData Path"
+    Target="/data"
+    Default="/mnt/user/appdata/poopiepay"
+    Mode="rw"
+    Description="Persistent directory for storing PoopiePay data.json (saved UPI ID, remarks, and recent transactions)."
+    Type="Path"
+    Display="always"
+    Required="true"
+    Mask="false">
+  </Config>
+</Container>
