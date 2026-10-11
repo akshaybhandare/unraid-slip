@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Name>Invoicery</Name>
+  <Repository>ghcr.io/akshaybhandare/invoicery:latest</Repository>
+  <Registry>https://github.com/akshaybhandare/invoicery/pkgs/container/invoicery</Registry>
+  <Network>bridge</Network>
+  <Privileged>false</Privileged>
+  <Shell>sh</Shell>
+  <Icon>https://raw.githubusercontent.com/akshaybhandare/unraid-slip/main/invoicery-icon.png</Icon>
+  <WebUI>http://[IP]:[PORT:3000]</WebUI>
+  <Overview>
+    Invoicery is a self-hosted boutique workshop for crafting invoices, tracking expenses, managing inventory, and generating automated Indian GST (GSTR-1 and GSTR-3B) tax reports. Built with Bun, SQLite, and vanilla modern web tech, featuring offline-first local data ownership, automated interstate/intrastate tax routing, backup &amp; restore, and a clean dark-mode UI.
+  </Overview>
+  <Project>https://github.com/akshaybhandare/invoicery</Project>
+  <Support>https://github.com/akshaybhandare/invoicery/issues</Support>
+  <Category>Productivity: Financial: Tools:Utilities Network:Web</Category>
+  <ExtraSearchTerms>invoicery invoice billing gst gstr1 gstr3b accounting boutique receipt tax finance</ExtraSearchTerms>
+  <TemplateURL>https://raw.githubusercontent.com/akshaybhandare/unraid-slip/main/templates/invoicery.xml</TemplateURL>
+  <Date>2026-10-11</Date>
+  <Changes>
+    [Initial Release] - Official Unraid template for Invoicery.
+  </Changes>
+  <Config
+    Name="WebUI Port"
+    Target="3000"
+    Default="3000"
+    Mode="tcp"
+    Description="Port used by the Invoicery web interface."
+    Type="Port"
+    Display="always"
+    Required="true"
+    Mask="false">
+  </Config>
+  <Config
+    Name="Data Storage Path"
+    Target="/app/data"
+    Default="/mnt/user/appdata/invoicery/data"
+    Mode="rw"
+    Description="Persistent directory for storing Invoicery SQLite database (billing.db)."
+    Type="Path"
+    Display="always"
+    Required="true"
+    Mask="false">
+  </Config>
+  <Config
+    Name="Attachments Storage Path"
+    Target="/app/attachments"
+    Default="/mnt/user/appdata/invoicery/attachments"
+    Mode="rw"
+    Description="Persistent directory for storing invoice PDFs and receipt uploads."
+    Type="Path"
+    Display="always"
+    Required="true"
+    Mask="false">
+  </Config>
+  <Config
+    Name="HOST"
+    Target="HOST"
+    Default="0.0.0.0"
+    Description="Network binding address (set to 0.0.0.0 to allow access from local network)."
+    Type="Variable"
+    Display="advanced"
+    Required="false"
+    Mask="false">
+  </Config>
+  <Config
+    Name="PORT"
+    Target="PORT"
+    Default="3000"
+    Description="Internal server port."
+    Type="Variable"
+    Display="advanced"
+    Required="false"
+    Mask="false">
+  </Config>
+  <Config
+    Name="NODE_ENV"
+    Target="NODE_ENV"
+    Default="production"
+    Description="Running profile environment."
+    Type="Variable"
+    Display="advanced"
+    Required="false"
+    Mask="false">
+  </Config>
+  <Config
+    Name="DB_PATH"
+    Target="DB_PATH"
+    Default="/app/data/billing.db"
+    Description="Path to SQLite database file inside container."
+    Type="Variable"
+    Display="advanced"
+    Required="false"
+    Mask="false">
+  </Config>
+</Container>
